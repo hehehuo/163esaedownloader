@@ -179,4 +179,13 @@ def mainmenu():
 		print('未知指令\n')
 		mainmenu()
 #
+def checknewver():
+	response = urllib.request.urlopen('https://hehehuo.github.io/vjtsb/app/python/')
+	j = response.read().decode('utf-8')
+	j = json.loads(j)
+	if j['ver'] == alpha:
+		mainmenu
+	else:
+		print('版本已过时，请从github重新获取最新版本')
+#
 mainmenu()
